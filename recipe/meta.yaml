@@ -32,7 +32,8 @@ test:
     - griffe
   commands:
     - pip check
-    - pytest
+    - pytest  # [not win]
+    - pytest --ignore=tests/test_encoders.py  # [win]
   requires:
     - pip
     - pytest >=6.2

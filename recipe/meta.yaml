@@ -9,7 +9,7 @@ source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/griffe-{{ version }}.tar.gz
   sha256: 6da7274ee20f98102a5836113211cf4a4a5aeb08573c15b682c052bbc08c647e
   patches:
-    - patches/0001-windows-cli-test-patch.patch # [win]
+    - patches/0001-windows-cli-test-patch.patch  # [win]
 
 build:
   skip: true  # [py<37]

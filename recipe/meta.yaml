@@ -12,7 +12,7 @@ source:
 build:
   skip: true  # [py<37]
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 2
 
 requirements:
   host:
@@ -24,12 +24,17 @@ requirements:
     - cached_property  # [py<38]
 
 test:
+  source_files:
+    - tests
   imports:
     - griffe
   commands:
     - pip check
+    - pytest
   requires:
     - pip
+    - pytest >=6.2
+    - pytest-xdist >=2.4
 
 about:
   home: https://mkdocstrings.github.io/griffe

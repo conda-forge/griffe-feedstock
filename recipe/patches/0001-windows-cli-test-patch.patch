@@ -1,0 +1,22 @@
+From dce31ef6de4e92988d1114f5208c11e9017a48f2 Mon Sep 17 00:00:00 2001
+From: Brandon Andersen <31670449+bandersen23@users.noreply.github.com>
+Date: Sat, 12 Mar 2022 13:09:00 -0500
+Subject: [PATCH] Update test_cli.py
+
+---
+ tests/test_cli.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/tests/test_cli.py b/tests/test_cli.py
+index 1fd1d18..f5ea796 100644
+--- a/tests/test_cli.py
++++ b/tests/test_cli.py
+@@ -7,7 +7,7 @@
+ 
+ def test_main():
+     """Basic CLI test."""
+-    assert cli.main(["griffe", "-s", "src", "-o/dev/null"]) == 0
++    assert cli.main(["griffe", "-s", "src", "-oNUL"]) == 0
+ 
+ 
+ def test_show_help(capsys):

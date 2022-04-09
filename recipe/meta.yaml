@@ -8,8 +8,6 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/griffe-{{ version }}.tar.gz
   sha256: d7a9097d142be4e1a189cb78f05efab069040ff025f5138cb92f696fcf7b2cd2
-  patches:
-    - patches/0001-windows-cli-test-patch.patch  # [win]
 
 build:
   skip: true  # [py<37]
@@ -23,7 +21,7 @@ requirements:
     - pdm
   run:
     - python
-    - cached_property 
+    - cached_property
     # - aiofiles ~=0.7
 
 test:

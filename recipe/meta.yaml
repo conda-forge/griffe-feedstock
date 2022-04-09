@@ -1,5 +1,5 @@
 {% set name = "griffe" %}
-{% set version = "0.15.0" %}
+{% set version = "0.15.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/griffe-{{ version }}.tar.gz
-  sha256: 80dd57f694327e4dd534fa88a23b7aa784b3e15cd61351c628efd226c6247143
+  sha256: d7a9097d142be4e1a189cb78f05efab069040ff025f5138cb92f696fcf7b2cd2
   patches:
     - patches/0001-windows-cli-test-patch.patch  # [win]
 
@@ -23,7 +23,8 @@ requirements:
     - pdm
   run:
     - python
-    - cached_property  # [py<38]
+    - cached_property 
+    # - aiofiles ~=0.7
 
 test:
   source_files:

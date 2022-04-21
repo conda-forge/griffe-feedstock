@@ -27,7 +27,6 @@ test:
   imports:
     - griffe
     - griffe.loader
-    - griffe.extensions
     - griffe.docstrings.parsers
     - griffe.dataclasses
   commands:

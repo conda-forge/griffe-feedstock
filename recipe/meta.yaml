@@ -12,7 +12,7 @@ source:
 build:
   skip: true  # [py<37]
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -22,20 +22,19 @@ requirements:
   run:
     - python
     - cached_property 
-    # - aiofiles ~=0.7
 
 test:
-  source_files:
-    - tests
   imports:
     - griffe
+    - griffe.loader
+    - griffe.docstrings.parsers
+    - griffe.dataclasses
   commands:
+    - griffe -h  # [not win]
+    - griffe griffe  # [not win]
     - pip check
-    - pytest
   requires:
     - pip
-    - pytest >=6.2
-    - pytest-xdist >=2.4
 
 about:
   home: https://mkdocstrings.github.io/griffe

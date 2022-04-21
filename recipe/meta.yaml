@@ -30,8 +30,8 @@ test:
     - griffe.docstrings.parsers
     - griffe.dataclasses
   commands:
-    - griffe -h
-    - griffe griffe
+    - griffe -h  # [not win]
+    - griffe griffe  # [not win]
     - pip check
   requires:
     - pip

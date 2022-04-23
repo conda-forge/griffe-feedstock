@@ -21,7 +21,7 @@ requirements:
     - pdm
   run:
     - python
-    - cached_property 
+    - cached-property. # [py<3.8]
 
 test:
   imports:

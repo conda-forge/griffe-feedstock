@@ -12,7 +12,7 @@ source:
 build:
   skip: true  # [py<37]
   script: {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 3
 
 requirements:
   host:
@@ -21,7 +21,7 @@ requirements:
     - pdm
   run:
     - python
-    - cached-property. # [py<3.8]
+    - cached-property. # [py<38]
 
 test:
   imports:

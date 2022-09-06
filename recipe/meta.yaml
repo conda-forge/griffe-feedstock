@@ -12,7 +12,10 @@ source:
 build:
   skip: true  # [py<37]
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
+  noarch: generic
+  entry_points:
+    - griffe = griffe.cli:main
 
 requirements:
   host:
@@ -30,8 +33,8 @@ test:
     - griffe.docstrings.parsers
     - griffe.dataclasses
   commands:
-    - griffe -h  # [not win]
-    - griffe griffe  # [not win]
+    - griffe -h
+    - griffe griffe
     - pip check
   requires:
     - pip

@@ -10,18 +10,20 @@ source:
   sha256: a3c25a2b7bf729ecee7cd455b4eff548f01c620b8f58a8097a800caad221f12e
 
 build:
-  skip: true  # [py<37]
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
+  noarch: python
+  entry_points:
+    - griffe = griffe.cli:main
 
 requirements:
   host:
-    - pip
-    - python
+    - pip <22
+    - python >=3.7
     - pdm
   run:
-    - python
-    - cached-property  # [py<38]
+    - python >=3.7
+    - cached-property
 
 test:
   imports:
@@ -30,8 +32,8 @@ test:
     - griffe.docstrings.parsers
     - griffe.dataclasses
   commands:
-    - griffe -h  # [not win]
-    - griffe griffe  # [not win]
+    - griffe -h
+    - griffe griffe
     - pip check
   requires:
     - pip

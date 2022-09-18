@@ -19,7 +19,7 @@ build:
 requirements:
   host:
     - python >=3.7
-    - pdm
+    - pdm >2
   run:
     - python >=3.7
     - cached-property
@@ -48,3 +48,4 @@ about:
 extra:
   recipe-maintainers:
     - bandersen23
+    - dbast

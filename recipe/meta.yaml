@@ -33,7 +33,7 @@ test:
     - griffe.dataclasses
   commands:
     - griffe -h
-    - griffe dump
+    #- griffe dump
     - pip check
   requires:
     - pip

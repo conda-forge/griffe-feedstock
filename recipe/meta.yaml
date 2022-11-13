@@ -23,6 +23,7 @@ requirements:
   run:
     - python >=3.7
     - cached-property
+    - colorama >=0.4
 
 test:
   imports:

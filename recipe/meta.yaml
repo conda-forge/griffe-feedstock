@@ -1,5 +1,5 @@
 {% set name = "griffe" %}
-{% set version = "0.25.0" %}
+{% set version = "0.25.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/griffe-{{ version }}.tar.gz
-  sha256: 35d412d2235330a05c755f906458c70ee8a4eec85bc3de20f1fd79d0a501dc38
+  sha256: d79365aa6f5050a24b47fca4b351fbdd446f0fe7924c9e55ae908bfacc91bfcf
 
 build:
   script: {{ PYTHON }} -m pip install . -vv

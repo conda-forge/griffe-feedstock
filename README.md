@@ -1,11 +1,11 @@
-About griffe
-============
+About griffe-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/griffe-feedstock/blob/main/LICENSE.txt)
 
 Home: https://mkdocstrings.github.io/griffe
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/griffe-feedstock/blob/main/LICENSE.txt)
 
 Summary: Signatures for entire Python programs. Extract the structure, the frame, the skeleton of your project, to generate API documentation or find breaking changes in your API.
 

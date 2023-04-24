@@ -20,7 +20,7 @@ requirements:
   host:
     - python >=3.7
     - pdm >2
-    - pdm-pep517
+    - pdm-backend
   run:
     - python >=3.7
     - cached-property

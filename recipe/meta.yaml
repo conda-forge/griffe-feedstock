@@ -1,5 +1,5 @@
 {% set name = "griffe" %}
-{% set version = "0.25.5" %}
+{% set version = "0.27.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/griffe-{{ version }}.tar.gz
-  sha256: 11ea3403ef0560a1cbcf7f302eb5d21cf4c1d8ed3f8a16a75aa9f6f458caf3f1
+  sha256: f213e87f99bf3b76d2d4da999d5a38c2ec01b9a6ce3660c5ab52b663d785edba
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
@@ -20,7 +20,7 @@ requirements:
   host:
     - python >=3.7
     - pdm >2
-    - pdm-pep517
+    - pdm-backend
   run:
     - python >=3.7
     - cached-property

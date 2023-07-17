@@ -11,19 +11,18 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - griffe = griffe.cli:main
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.8
     - pdm >2
     - pdm-backend
   run:
-    - python >=3.7
-    - cached-property
+    - python >=3.8
     - colorama >=0.4
 
 test:

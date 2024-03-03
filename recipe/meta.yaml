@@ -21,6 +21,7 @@ requirements:
     - python >=3.8
     - pdm >2
     - pdm-backend
+    - pip
   run:
     - python >=3.8
     - astunparse >=1.6

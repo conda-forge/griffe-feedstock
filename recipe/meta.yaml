@@ -1,5 +1,5 @@
 {% set name = "griffe" %}
-{% set version = "0.41.0" %}
+{% set version = "0.41.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/griffe-{{ version }}.tar.gz
-  sha256: 850128c3198c18713eaf0a6cc8572e590a16b1965f72a4e871e66cf84740903f
+  sha256: 09d12f955004102d7deeec2e1d87d07434fb2d42905d21b4e03c7cbf9cf78754
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
@@ -21,8 +21,10 @@ requirements:
     - python >=3.8
     - pdm >2
     - pdm-backend
+    - pip
   run:
     - python >=3.8
+    - astunparse >=1.6
     - colorama >=0.4
 
 test:

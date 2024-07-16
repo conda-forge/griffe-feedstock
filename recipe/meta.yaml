@@ -11,7 +11,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - griffe = griffe.cli:main
@@ -26,6 +26,7 @@ requirements:
     - python >=3.8
     - astunparse >=1.6
     - colorama >=0.4
+    - backports.strenum >=1.3
 
 test:
   imports:

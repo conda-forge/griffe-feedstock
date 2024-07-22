@@ -14,7 +14,7 @@ build:
   number: 2
   noarch: python
   entry_points:
-    - griffe = griffe.cli:main
+    - griffe = griffe:main
 
 requirements:
   host:
@@ -31,12 +31,8 @@ requirements:
 test:
   imports:
     - griffe
-    - griffe.loader
-    - griffe.docstrings.parsers
-    - griffe.dataclasses
   commands:
     - griffe -h
-    #- griffe dump
     - pip check
   requires:
     - pip

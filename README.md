@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/griffe-feedstoc
 
 Home: https://mkdocstrings.github.io/griffe
 
-Package license: MIT
+Package license: ISC
 
 Summary: Signatures for entire Python programs. Extract the structure, the frame, the skeleton of your project, to generate API documentation or find breaking changes in your API.
 

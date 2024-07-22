@@ -32,6 +32,7 @@ test:
   imports:
     - griffe
   commands:
+    - griffe -v
     - griffe -h
     - pip check
   requires:

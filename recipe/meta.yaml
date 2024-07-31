@@ -11,10 +11,10 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 3
   noarch: python
   entry_points:
-    - griffe = griffe.cli:main
+    - griffe = griffe:main
 
 requirements:
   host:
@@ -31,12 +31,9 @@ requirements:
 test:
   imports:
     - griffe
-    - griffe.loader
-    - griffe.docstrings.parsers
-    - griffe.dataclasses
   commands:
-    - griffe -h
-    #- griffe dump
+    - griffe --help
+    - griffe --version
     - pip check
   requires:
     - pip

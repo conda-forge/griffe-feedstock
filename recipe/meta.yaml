@@ -6,24 +6,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/griffe-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/griffe-{{ version }}.tar.gz
   sha256: 72964f93e08c553257706d6cd2c42d1c172213feb48b2be386f243380b405d4b
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - griffe = griffe:main
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - pdm >2
     - pdm-backend
     - pip
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - colorama >=0.4
 
 test:
@@ -35,6 +35,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://mkdocstrings.github.io/griffe

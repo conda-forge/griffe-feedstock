@@ -9,6 +9,9 @@ source:
   url: https://github.com/mkdocstrings/griffe/archive/refs/tags/${{ version }}.tar.gz
   sha256: 341cf840682bcb7e7e9551c0303e1ca8a6798b0c767b14ce8ee9ed875c642601
 
+build:
+  number: 0
+
 outputs:
   - package:
       name: griffelib
@@ -31,6 +34,7 @@ outputs:
           imports:
             - griffe
           pip_check: true
+          python_version: ${{ python_min }}.*
     about:
       homepage: https://mkdocstrings.github.io/griffe
       documentation: https://mkdocstrings.github.io/griffe
@@ -72,6 +76,7 @@ outputs:
           imports:
             - griffecli
           pip_check: true
+          python_version: ${{ python_min }}.*
     about:
       homepage: https://mkdocstrings.github.io/griffe
       documentation: https://mkdocstrings.github.io/griffe
@@ -108,6 +113,7 @@ outputs:
           imports:
             - griffe
           pip_check: true
+          python_version: ${{ python_min }}.*
       - script:
           - griffe --help
           - griffe --version
@@ -121,6 +127,17 @@ outputs:
         breaking changes in your API.
       license: ISC
       license_file: LICENSE
+
+about:
+  homepage: https://mkdocstrings.github.io/griffe
+  documentation: https://mkdocstrings.github.io/griffe
+  repository: https://github.com/mkdocstrings/griffe
+  summary: >-
+    Signatures for entire Python programs. Extract the structure, the frame,
+    the skeleton of your project, to generate API documentation or find
+    breaking changes in your API.
+  license: ISC
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:

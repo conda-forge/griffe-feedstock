@@ -1,0 +1,128 @@
+context:
+  version: "2.0.0"
+
+recipe:
+  name: griffe
+  version: ${{ version }}
+
+source:
+  url: https://github.com/mkdocstrings/griffe/archive/refs/tags/${{ version }}.tar.gz
+  sha256: 341cf840682bcb7e7e9551c0303e1ca8a6798b0c767b14ce8ee9ed875c642601
+
+outputs:
+  - package:
+      name: griffelib
+      version: ${{ version }}
+    build:
+      number: 0
+      noarch: python
+      script: python -m pip install packages/griffelib -vv --no-deps --no-build-isolation
+    requirements:
+      host:
+        - python ${{ python_min }}.*
+        - pip
+        - hatchling
+        - pdm-backend
+        - uv-dynamic-versioning >=0.7.0
+      run:
+        - python >=${{ python_min }}
+    tests:
+      - python:
+          imports:
+            - griffe
+          pip_check: true
+    about:
+      homepage: https://mkdocstrings.github.io/griffe
+      documentation: https://mkdocstrings.github.io/griffe
+      repository: https://github.com/mkdocstrings/griffe
+      summary: >-
+        Signatures for entire Python programs. Extract the structure, the frame,
+        the skeleton of your project, to generate API documentation or find
+        breaking changes in your API.
+      license: ISC
+      license_file: LICENSE
+
+  - package:
+      name: griffecli
+      version: ${{ version }}
+    build:
+      number: 0
+      noarch: python
+      python:
+        entry_points:
+          - griffecli = griffecli:main
+      script: python -m pip install packages/griffecli -vv --no-deps --no-build-isolation
+    requirements:
+      host:
+        - python ${{ python_min }}.*
+        - pip
+        - hatchling
+        - pdm-backend
+        - uv-dynamic-versioning >=0.7.0
+        - ${{ pin_subpackage("griffelib", upper_bound="x.x.x") }}
+      run:
+        - python >=${{ python_min }}
+        - colorama >=0.4
+        - ${{ pin_subpackage("griffelib", upper_bound="x.x.x") }}
+    tests:
+      - script:
+          - griffecli --help
+          - griffecli --version
+      - python:
+          imports:
+            - griffecli
+          pip_check: true
+    about:
+      homepage: https://mkdocstrings.github.io/griffe
+      documentation: https://mkdocstrings.github.io/griffe
+      repository: https://github.com/mkdocstrings/griffe
+      summary: CLI tools for griffe - signatures for entire Python programs.
+      license: ISC
+      license_file: LICENSE
+
+  - package:
+      name: griffe
+      version: ${{ version }}
+    build:
+      number: 0
+      noarch: python
+      python:
+        entry_points:
+          - griffe = griffecli:main
+      script: python -m pip install . -vv --no-deps --no-build-isolation
+    requirements:
+      host:
+        - python ${{ python_min }}.*
+        - pip
+        - hatchling
+        - pdm-backend
+        - uv-dynamic-versioning >=0.7.0
+        - ${{ pin_subpackage("griffelib", upper_bound="x.x.x") }}
+        - ${{ pin_subpackage("griffecli", upper_bound="x.x.x") }}
+      run:
+        - python >=${{ python_min }}
+        - ${{ pin_subpackage("griffelib", upper_bound="x.x.x") }}
+        - ${{ pin_subpackage("griffecli", upper_bound="x.x.x") }}
+    tests:
+      - python:
+          imports:
+            - griffe
+          pip_check: true
+      - script:
+          - griffe --help
+          - griffe --version
+    about:
+      homepage: https://mkdocstrings.github.io/griffe
+      documentation: https://mkdocstrings.github.io/griffe
+      repository: https://github.com/mkdocstrings/griffe
+      summary: >-
+        Signatures for entire Python programs. Extract the structure, the frame,
+        the skeleton of your project, to generate API documentation or find
+        breaking changes in your API.
+      license: ISC
+      license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - bandersen23
+    - dbast

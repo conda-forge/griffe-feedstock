@@ -3,11 +3,28 @@ About griffe-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/griffe-feedstock/blob/main/LICENSE.txt)
 
+
+About griffe
+------------
+
 Home: https://mkdocstrings.github.io/griffe
 
 Package license: ISC
 
 Summary: Signatures for entire Python programs. Extract the structure, the frame, the skeleton of your project, to generate API documentation or find breaking changes in your API.
+
+Development: https://github.com/mkdocstrings/griffe
+
+Documentation: https://mkdocstrings.github.io/griffe
+
+About griffecli
+---------------
+
+Home: https://mkdocstrings.github.io/griffe
+
+Package license: ISC
+
+Summary: CLI tools for griffe - signatures for entire Python programs.
 
 Development: https://github.com/mkdocstrings/griffe
 
@@ -32,6 +49,8 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-griffe-green.svg)](https://anaconda.org/conda-forge/griffe) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/griffe.svg)](https://anaconda.org/conda-forge/griffe) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/griffe.svg)](https://anaconda.org/conda-forge/griffe) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/griffe.svg)](https://anaconda.org/conda-forge/griffe) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-griffecli-green.svg)](https://anaconda.org/conda-forge/griffecli) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/griffecli.svg)](https://anaconda.org/conda-forge/griffecli) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/griffecli.svg)](https://anaconda.org/conda-forge/griffecli) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/griffecli.svg)](https://anaconda.org/conda-forge/griffecli) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-griffelib-green.svg)](https://anaconda.org/conda-forge/griffelib) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/griffelib.svg)](https://anaconda.org/conda-forge/griffelib) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/griffelib.svg)](https://anaconda.org/conda-forge/griffelib) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/griffelib.svg)](https://anaconda.org/conda-forge/griffelib) |
 
 Installing griffe
 =================
@@ -43,16 +62,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `griffe` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `griffe, griffecli, griffelib` can be installed with `conda`:
 
 ```
-conda install griffe
+conda install griffe griffecli griffelib
 ```
 
 or with `mamba`:
 
 ```
-mamba install griffe
+mamba install griffe griffecli griffelib
 ```
 
 It is possible to list all of the versions of `griffe` available on your platform with `conda`:

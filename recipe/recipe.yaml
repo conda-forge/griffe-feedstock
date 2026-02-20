@@ -8,6 +8,10 @@ recipe:
 source:
   url: https://github.com/mkdocstrings/griffe/archive/refs/tags/${{ version }}.tar.gz
   sha256: 341cf840682bcb7e7e9551c0303e1ca8a6798b0c767b14ce8ee9ed875c642601
+  # We need to patch griffe's version discovery script until they remove the PDM backend
+  # https://github.com/mkdocstrings/griffe/blob/2666aaabe9b93f70c3dcde46ac284251a065a5c1/pyproject.toml#L2-L4
+  patches:
+    - patches/0001-respect-UV_DYNAMIC_VERSIONING_BYPASS-in-get_version.patch
 
 build:
   number: 0
@@ -19,7 +23,7 @@ outputs:
     build:
       number: 0
       noarch: python
-      script: python -m pip install packages/griffelib -vv --no-deps --no-build-isolation
+      script: UV_DYNAMIC_VERSIONING_BYPASS=${{ version }} python -m pip install packages/griffelib -vv --no-deps --no-build-isolation
     requirements:
       host:
         - python ${{ python_min }}.*
@@ -55,7 +59,7 @@ outputs:
       python:
         entry_points:
           - griffecli = griffecli:main
-      script: python -m pip install packages/griffecli -vv --no-deps --no-build-isolation
+      script: UV_DYNAMIC_VERSIONING_BYPASS=${{ version }} python -m pip install packages/griffecli -vv --no-deps --no-build-isolation
     requirements:
       host:
         - python ${{ python_min }}.*
@@ -94,7 +98,7 @@ outputs:
       python:
         entry_points:
           - griffe = griffecli:main
-      script: python -m pip install . -vv --no-deps --no-build-isolation
+      script: UV_DYNAMIC_VERSIONING_BYPASS=${{ version }} python -m pip install . -vv --no-deps --no-build-isolation
     requirements:
       host:
         - python ${{ python_min }}.*

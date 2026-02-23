@@ -1,0 +1,18 @@
+--- a/scripts/get_version.py
++++ b/scripts/get_version.py
+@@ -1,5 +1,6 @@
+ # Get current project version from Git tags or changelog.
+
++import os
+ import re
+ from contextlib import suppress
+ from pathlib import Path
+@@ -17,6 +18,8 @@ _default_scm_version = SCMVersion(Version("0.0.0"), None, False, None, None)  #
+
+
+ def get_version() -> str:
++    if "UV_DYNAMIC_VERSIONING_BYPASS" in os.environ:
++        return os.environ["UV_DYNAMIC_VERSIONING_BYPASS"]
+     scm_version = get_version_from_scm(_root) or _default_scm_version
+     if scm_version.version <= Version("0.1"):  # Missing Git tags?
+         with suppress(OSError, StopIteration):  # noqa: SIM117

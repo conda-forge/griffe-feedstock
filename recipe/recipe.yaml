@@ -1,5 +1,5 @@
 context:
-  version: "2.4.0"
+  version: "2.4.1"
 
 recipe:
   name: griffe
@@ -7,7 +7,7 @@ recipe:
 
 source:
   url: https://github.com/mkdocstrings/griffe/archive/refs/tags/${{ version }}.tar.gz
-  sha256: 5460135fd38c029ae2916ea693ce8642a320bef2de31f0e5eb8333ecd533a5d3
+  sha256: 4ee80b9a42e24c5f50da9dd8255fe3ab3fea37e4b6981b62b111bfb27b1f4179
   # We need to patch griffe's version discovery script until they remove the PDM backend
   # https://github.com/mkdocstrings/griffe/blob/2666aaabe9b93f70c3dcde46ac284251a065a5c1/pyproject.toml#L2-L4
   patches:
